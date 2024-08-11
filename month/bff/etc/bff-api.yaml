@@ -1,0 +1,15 @@
+Name: bff-api
+Host: 0.0.0.0
+Port: 8888
+StockSrv:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: stock.rpc
+
+
+OrderSrv:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: order.rpc

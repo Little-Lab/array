@@ -1,0 +1,28 @@
+syntax = "v1"
+
+type (
+	BFFRequest {
+		UserId  int64 `json:"userId"`
+		GoodsId int64 `json:"goodsId"`
+		Num     int64 `json:"num"`
+		PayType int64 `json:"payType"`
+	}
+	CreateOrderRequest {
+		UserId  int64 `json:"userId"`
+		GoodsId int64 `json:"goodsId"`
+		Num     int64 `json:"num"`
+		PayType int64 `json:"payType"`
+	}
+	Response {
+		Code int                    `json:"code"`
+		Msg  string                 `json:"msg"`
+		Data map[string]interface{} `json:"data"`
+	}
+)
+
+service bff-api {
+	@handler bff
+	post /generate (BFFRequest) returns (Response)
+	@handler create
+	post /create (CreateOrderRequest) returns (Response)
+}

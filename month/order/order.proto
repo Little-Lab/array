@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package order;
+option go_package="./order";
+
+message TranCreateOrderRequest {
+  int64 goodsId = 1;
+  int64 userId = 2;
+  int64 num = 3;
+  int64 payType = 4 ;
+}
+
+message TranDelOrderRequest{
+  int64 id = 1;
+}
+
+
+message Response {
+  bool  success = 1;
+}
+
+
+//service
+service Order {
+  rpc TranCreateOrder(TranCreateOrderRequest)returns(Response);
+  rpc TranRollback(TranDelOrderRequest)returns(Response);
+  rpc CreateOrder(TranCreateOrderRequest)returns(Response);
+}

@@ -1,0 +1,7 @@
+host: "127.0.0.1"
+port: 8848
+user: "nacos"
+password: "nacos"
+dataid: "zg6-week2"
+group: "dev"
+namespace: "79294009-a238-4532-b69a-0421c3449284"
